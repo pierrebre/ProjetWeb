@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://use.fontawesome.com/releases/v5.11.2/js/all.js" data-auto-replace-svg="nest"></script>
+        <!-- For dropdown menu -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
+
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+    </head>
+    <body>
+          <!-- Header -->
+            <nav class="navbar navbar-expand-sm sticky-top">
+                <a href="http://localhost:8000" class="navbar-left"><h3 style="color: white; margin-left: 30px">Dedeliveroo</h3></a>
+
+                {% if not app.user %}
+                    <button class="connexionBtn" onclick="window.location.href = '../../login';">
+                        <b>Se Connecter</b>
+                    </button>
+                {% else %}
+                    <div id="menu">
+									<li id="userbtn"><i class="fas fa-user"></i> <b>{{ app.user.currentUsername }}&nbsp;&nbsp;<i class="fas fa-caret-down"></i></b>
+										<ul>
+                                        <div class="dropdownContainer">
+                                        <li><a href="#" onclick="window.location.href = '../../register/{{ app.user.getId }}/edit';"><i class="fas fa-user-cog"></i><p style="float: right; margin-right: 13px; margin-top: 2px;">Mon Compte</p></a></li>
+                                            <li style="padding-bottom: 5px; border-bottom: 0.51px solid #C7C7C7;"><a href="#" onclick="window.location.href = '../../mescolis';"><i class="fas fa-box"></i><p style="float: right; margin-right: 40px; margin-top: -22px;">Mes Colis</p></a></li>
+                                            {# <li style="padding-bottom: 5px; border-bottom: 0.51px solid #C7C7C7;"><a href="infos">&nbsp;<i class="fas fa-info"></i><p style="float: right; margin-right: 66px; margin-top: -22px;">Nouveau colis</p></a></li> #}
+                                            <li><a href="#" data-toggle="modal" data-target="#logoutModal"><i class="fas fa-power-off"></i><p style="float: right; margin-right: 12px; margin-top: -24px;">Déconnexion</p></a></li>	
+										</div>
+                                        </ul>
+									</li>			
+					</div>
+                {% endif %}
+            </nav>
+          <!-- End Header -->
+
+
+          {% block body %}{% endblock %}
+
+
+          <!-- Logout Modal -->
+            <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                <div class="modal-body" style="margin-bottom: -10px">
+                    <i class="fas fa-sign-out-alt"></i> Êtes-vous sûr de vouloir vous déconnecter ?
+                    <br>
+                    <button data-dismiss="modal" type="button" class="btn btn-outline-danger btn-sm" style="float:right; margin-right: -11px;">Annuler</button>
+                    <button onclick="window.location.href = '../../logout';"  type="button" class="btn btn-outline-success btn-sm" style="float:right; margin-right: 10px;">Oui</button>
+                </div>
+                </div>
+            </div>
+            </div>
+          <!-- End Logout Modal -->
+
+
+          <!-- Footer -->
+            <footer class="page-footer" style="background-color: #212733; z-index: 3000;">
+
+                <div style="background-color: #7ea7ff;">
+                <div class="container">
+                    <!-- Grid row-->
+                    <div class="row py-4 d-flex align-items-center">
+                    </div>
+                    <!-- Grid row-->
+                </div>
+                </div>
+
+                <!-- Footer Links -->
+                <div class="container text-center text-md-left mt-5"   style="color: white">
+
+                <!-- Grid row -->
+                <div class="row mt-3">
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+
+                    <!-- Content -->
+                    <h6 class="text-uppercase font-weight-bold">Dedeliveroo</h6>
+                    <hr class="accent-2 mb-4 mt-0 d-inline-block mx-auto" id="separateur">
+                    <p>Dedeliveroo vous permet de récupérer et livrer des colis<br>en toute simplicité, et ceci <br>partout en France.</p>
+
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+
+                    <!-- Links -->
+                    <h6 class="text-uppercase font-weight-bold">Pages</h6>
+                    <hr class="accent-2 mb-4 mt-0 d-inline-block mx-auto" id="separateur">
+                    <p>
+                        <a href="index.php" style="color:white">Accueil</a>
+                    </p>
+                    <p>
+                        <a href="#" onclick="window.location.href = '../../cgu';" style="color:white">CGU</a>
+                    </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+                    <!-- Links -->
+                    <h6 class="text-uppercase font-weight-bold">Liens utiles</h6>
+                    <hr class="accent-2 mb-4 mt-0 d-inline-block mx-auto" id="separateur">
+                    <p>
+                        <a style="color:white" href="https://www.google.fr/maps/@48.7323764,-3.4605412,15z">Google Map</a>
+                    </p>
+
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase font-weight-bold">Contacts</h6>
+
+                    <hr class="accent-2 mb-4 mt-0 d-inline-block mx-auto" id="separateur">          
+                    <p><i class="fa fa-home mr-3"></i>              Lycée Félix Le Dantec<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rue des Cordiers • BP 80349<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;22303 Lannion cedex</p>
+
+                    <i class="fa fa-phone mr-3"></i> 02 96 05 61 71</p>
+                    </div>
+                    <!-- Grid column -->
+
+                </div>
+                <!-- Grid row -->
+
+                </div>
+                <!-- Footer Links -->
+
+                <!-- Copyright -->
+                <div class="text-center py-3" style="background-color: #1a1f29; color:grey; display: block;">© {{"now"|date("Y")}} Copyright:
+                <a href="index.php" style="color: white"> Dedeliveroo.fr</a>
+                </div>
+                <!-- Copyright -->
+
+            </footer>
+        <!-- Footer -->
+        
+        {% block javascripts %}
+        {% endblock %}
+    </body>
+</html>

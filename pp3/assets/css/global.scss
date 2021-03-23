@@ -1,0 +1,279 @@
+
+@import "~bootstrap/scss/bootstrap";
+
+
+
+/*#region Header*/
+.activeBgTransparent {
+    background-color: transparent;
+  }
+
+.activeBgColor{
+    background-color: #7ea7ff;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+
+
+/* Before Login */
+/* for homepage */
+@media screen and (max-width: 575px) {
+    /* On mobile */
+    .activeBgColorDevice{
+        background-color: #7ea7ff;
+        box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .connexionBtn {
+        color: #4E4E4E;
+        background-color: white;
+        border: 1.5px solid #4E4E4E;
+        height: 35px;
+        margin-left: auto;
+    }
+}
+
+@media screen and (min-width: 576px) {
+    /* on desktop */
+    .activeBgColorDevice{
+        background-color: transparent;
+    }
+
+    .connexionBtn {
+        color: #4E4E4E;
+        background-color: white;
+        border: 1.5px solid #4E4E4E;
+        height: 35px;
+        margin-left: auto;
+        margin-right: 100px;
+    }
+}
+
+
+
+/* After Login */
+@media screen and (max-width: 575px) {
+    /* On mobile */
+
+    #userbtn	{
+		position: absolute;
+		background-color: white;
+        color: #4E4E4E;
+        border: 1.5px solid #4E4E4E;
+		right: 16px;
+		top: 11px;
+        bottom: 11px;
+        padding-top: 5px;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+.dropdownContainer {
+    margin-left: -46px;
+    padding-top: 1px;
+    padding-bottom: 5px;
+    margin-top: 5px;
+    width: 150px;
+    background-color: white;
+    border-radius: 2px;
+}
+}
+
+
+@media screen and (min-width: 576px) {
+    /* on desktop */
+#userbtn	{
+		position: absolute;
+		background-color: white;
+        color: #4E4E4E;
+        border: 1.5px solid #4E4E4E;
+		right: 116px;
+		top: 11px;
+        bottom: 11px;
+        padding-top: 5px;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+.dropdownContainer {
+    margin-left: -9.5px;
+    padding-top: 1px;
+    padding-bottom: 5px;
+    margin-top: 5px;
+    width: 160px;
+    background-color: white;
+    border-radius: 2px;
+    box-shadow: -1px 3px 15px 0px rgba(0,0,0,0.59);
+}
+}
+
+#menu, #menu ul	{
+	
+    padding:0px;
+    margin:0px;
+    list-style:none;
+}
+
+#menu a	{
+    margin-top: 4px;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-decoration:none;
+    display:block;
+	font-weight:bold;
+    color: #505050;
+    background-color: white;
+}
+
+#menu li{
+	user-select : none;
+}
+
+#menu a:hover {
+	color: #d9534f;
+}
+
+#menu ul	{
+    position:absolute;
+	left:-999em;
+    text-align:left;
+    z-index:1000;
+}
+
+#menu li:hover ul	{
+    left:auto;  
+}
+/*#endregion*/
+
+
+
+/*#region Forms*/
+.loginForm{
+    border: solid #6C6C6C;
+    margin-top: 95px;
+    padding-top: 80px;
+    padding-bottom:100px;
+    padding-left: 90px;
+    margin-left: 200px;
+    width: 525px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.registerForm{
+    border: solid #6C6C6C;
+    margin-top: 50px;
+    padding-top: 80px;
+    padding-bottom:100px;
+    padding-left: 90px;
+    margin-left: 200px;
+    width: 525px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/*#endregion*/
+
+
+
+/*#region Footer*/
+footer{
+    margin-top: 100px;
+}
+
+#separateur{
+	background-color: #7ea7ff;
+	width: 60px;
+}
+/*#endregion*/
+
+
+
+/*#region LogoutModal*/
+.modal {
+    position: absolute;
+    float: left;
+    left: 50%;
+    top: 35%;
+    transform: translate(-50%, -50%);
+  }
+/*#endregion LogoutModal*/
+
+
+
+/*#region HomePage*/
+@media screen and (min-width: 576px) {
+    /* on desktop */
+    #addPackageBtnDiv{
+        width: 100%;
+        margin-top: -80px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    /* On mobile */
+    #addPackageBtnDiv{
+        width: 100%;
+        margin-top: -50px;
+    }
+}
+
+#divBtn{
+    // width: 180px;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.addPackageBtn{
+        background-color:#44c767;
+        border-radius:28px;
+        cursor:pointer;
+        color:#ffffff;
+        font-family:Trebuchet MS;
+        font-size:100%;
+        padding:12px 20px;
+        text-decoration:none;
+}
+
+.addPackageBtn:hover {
+    color: white;
+}
+/*#endregion HomePage*/
+
+
+/* #region MesColis*/
+#headerTableau{
+    width: 850px;
+    height: 30px;
+    background-color: black;
+    color: black;
+}
+
+#colHeader{
+    width: 17%;
+    background-color: rgb(201, 201, 201); 
+    height: 100%; 
+    display: inline-block; 
+    text-align: center;
+}
+
+#colColis{
+    width: 17%;
+    background-color: white; 
+    height: 100%; 
+    display: inline-block; 
+    text-align: center;
+}
+
+#divider{
+    margin-left: auto;
+    margin-right: auto;
+    width: 850px;
+    background-color: black;
+    height: 3px;
+}

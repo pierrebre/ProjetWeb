@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+  {% block body %}
+    <img id="cover" style="margin-top: -58px; width: 100%;" src="build\images\banner.jpg" />
+
+  <div id="addPackageBtnDiv">
+    <div id="divBtn">
+    <a href="#" onclick="window.location.href = '../../packageRegister';" class="addPackageBtn"><i class="fas fa-plus-circle"></i> Enregistrer un colis</a>
+    </div>
+  </div>
+
+<br>
+<div style="width: 500px; height: 280px; display: inline-block; margin-top: 150px;">
+<div style="width: 280px; height: 280px; margin-left:auto; margin-right: auto;">
+    <img style="width: 250px; margin-left: 10px; margin-top: 10px;" id="simple" src="build\images\smile.png" />
+</div>
+<p style="font-size: 30px; text-align: center"><b>Facile à utiliser</b></p>
+</div>
+
+<div style="width: 500px; height: 280px; display: inline-block; margin-left: auto; margin-right: auto;">
+<div style="width: 280px; height: 280px; margin-left:auto; margin-right: auto;">
+    <img style="width: 250px; margin-left: 10px; margin-top: 10px;" id="simple" src="build\images\speedometer.png" />
+</div>
+<p style="font-size: 30px; text-align: center"><b>Efficace</b></p>
+</div>
+
+<div style="width: 500px; height: 280px; display: inline-block;">
+<div style="width: 280px; height: 280px; margin-left:auto; margin-right: auto;">
+    <img style="width: 250px; margin-left: 10px; margin-top: 10px;" id="simple" src="build\images\euro.png" />
+</div>
+<p style="font-size: 30px; text-align: center"><b>Economique</b></p>
+</div>
+
+    {# <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> #}
+
+  {% block javascripts %}
+        <!-- header Bg -->
+            <script>
+              $(function() {
+                      $(".navbar").addClass("activeBgColorDevice");
+                });
+
+                $(function() {
+                $(window).on("scroll", function() {
+                    if($(window).scrollTop() > 15) {
+                $(".navbar").removeClass("activeBgColorDevice");
+                $(".navbar").addClass("activeBgColor");
+                  }
+              else{
+                $(".navbar").removeClass("activeBgColor");
+                      $(".navbar").addClass("activeBgColorDevice");
+              }
+                });
+              });
+            </script>
+        <!-- End header Bg -->
+
+        <!-- Scripts -->
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <!-- End Scripts -->
+  {% endblock %}
+{% endblock %}

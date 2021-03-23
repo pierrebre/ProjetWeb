@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PackageRegisterController!{% endblock %}
+
+{% block body %}
+
+    {% if not app.user %}
+
+        <meta http-equiv="refresh" content="1;url=../login"/>
+        <div style="height: 55vh;">
+            <h2 style="margin-top: 20px; margin-left: 20px;"><b>Vous n'êtes pas connecté.</b></h2>
+            <p style="margin-left: 20px;">Redirection en cours...</p>
+        </div>
+
+    {% else %}
+
+    <div class="loginForm">
+        {{ form_start(packageRegisterForm) }}
+
+            <h1 class="h3 mb-3 font-weight-normal" style="margin-top: -10px;"><i class="fas fa-archive"></i> <u>Enregistrer un colis</u></h1>
+            <br>
+            {{ form_row(packageRegisterForm.adresseDepart, {'label': 'Adresse de départ :'}) }}
+            {{ form_row(packageRegisterForm.adresseArrivee, {'label': 'Adresse d\'arrivée :'}) }}
+            {{ form_row(packageRegisterForm.taille, {'label': 'Taille(cm) :'}) }}
+            {{ form_row(packageRegisterForm.poids, {'label': ' '}) }}
+            <p style="margin-left: 190px; margin-top: -100px;">Poids(g) :</p>
+
+            <button class="btn btn-primary" style="margin-top: 45px;">Enregistrer</button>
+        {{ form_end(packageRegisterForm) }}
+    </div>
+
+    {% endif %}
+
+    {% block javascripts %}
+        <!-- header Bg -->
+            <script>
+                $(".navbar").removeClass("activeBgColorDevice");
+                $(".navbar").addClass("activeBgColor");
+            </script>
+        <!-- End header Bg -->
+
+        <!-- Scripts -->
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <!-- End Scripts -->
+    {% endblock %}
+{% endblock %}
